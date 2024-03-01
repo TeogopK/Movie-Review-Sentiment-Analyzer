@@ -8,6 +8,18 @@ This project implements a sentiment analyzer for movie reviews using Machine Lea
 - Analysis based on word sentiments.
 - Handling of stopwords for noise reduction.
 - Dataset expansion for continuous learning.
+  
+## Training
+
+1. Reads the reviews from *movieReviews.txt*.
+2. Calculates the sentiment score for each word as the average rating it appears in.
+3. Ignores stopwords and non-word characters during analysis.
+
+## Recognition
+
+1. Computes the sentiment score for a given review as the average sentiment score of the words in the review.
+2. Ignores stopwords and unknown words during analysis.
+3. If a review contains only unknown words or stopwords, the sentiment score is considered unknown (-1.0).
 
 ## Usage:
 
