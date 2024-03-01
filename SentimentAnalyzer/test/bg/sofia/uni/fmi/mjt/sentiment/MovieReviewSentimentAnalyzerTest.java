@@ -162,13 +162,13 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetWordSentiment() {
         setAnalyzer();
 
-        assertEquals(2.5, analyzer.getWordSentiment("good"),
+        assertEquals(2.5, analyzer.getWordSentiment("good"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
 
-        assertEquals(1.5, analyzer.getWordSentiment("bad"),
+        assertEquals(1.5, analyzer.getWordSentiment("bad"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
 
-        assertEquals(2, analyzer.getWordSentiment("neutral"),
+        assertEquals(2, analyzer.getWordSentiment("neutral"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
     }
 
@@ -176,13 +176,13 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetWordSentimentCaseInsensitive() {
         setAnalyzer();
 
-        assertEquals(2.5, analyzer.getWordSentiment("good"),
+        assertEquals(2.5, analyzer.getWordSentiment("good"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
 
-        assertEquals(2.5, analyzer.getWordSentiment("GOOD"),
+        assertEquals(2.5, analyzer.getWordSentiment("GOOD"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
 
-        assertEquals(2.5, analyzer.getWordSentiment("gOOd"),
+        assertEquals(2.5, analyzer.getWordSentiment("gOOd"), 0.1,
             "Expected sentiment word rating to be calculated correctly");
     }
 
@@ -221,7 +221,7 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetWordSentimentDouble() {
         setAnalyzerBigger();
 
-        assertEquals(1.333, analyzer.getWordSentiment("bad"), 3,
+        assertEquals(1.333, analyzer.getWordSentiment("bad"), 0.001,
             "Expected sentiment word rating to be calculated correctly");
     }
 
@@ -237,10 +237,10 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetReviewSentimentDuplicate() {
         setAnalyzerBigger();
 
-        assertEquals(2.25, analyzer.getReviewSentiment("wh1t wh1t fantastic ever!"),
+        assertEquals(2.25, analyzer.getReviewSentiment("wh1t wh1t fantastic ever!"), 0.01,
             "Expected sentiment review to be calculated correctly");
 
-        assertEquals(1.333, analyzer.getReviewSentiment("wh1t wh1t terrible"), 3,
+        assertEquals(1.333, analyzer.getReviewSentiment("wh1t wh1t terrible"), 0.001,
             "Expected sentiment review to be calculated correctly");
     }
 
@@ -248,7 +248,7 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetReviewSentimentOneMatch() {
         setAnalyzer();
 
-        assertEquals(2.5, analyzer.getReviewSentiment("Good movie!"),
+        assertEquals(2.5, analyzer.getReviewSentiment("Good movie!"), 0.1,
             "Expected sentiment review to be calculated correctly");
     }
 
@@ -256,7 +256,7 @@ public class MovieReviewSentimentAnalyzerTest {
     void testGetReviewSentimentTwoMatches() {
         setAnalyzer();
 
-        assertEquals(2.25, analyzer.getReviewSentiment("Good film!"),
+        assertEquals(2.25, analyzer.getReviewSentiment("Good film!"), 0.01,
             "Expected sentiment review to be calculated correctly");
     }
 
@@ -576,8 +576,7 @@ public class MovieReviewSentimentAnalyzerTest {
     void testAppendReview() {
         setAnalyzer();
 
-        assertTrue(analyzer.appendReview("New new ninja neutral!", 3),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New new ninja neutral!", 3), "Expected review to be appended successfully");
 
         assertEquals(1, analyzer.getWordFrequency("ninja"), "Expected new sentiment words to be added correctly");
         assertEquals(2, analyzer.getWordFrequency("new"), "Expected new sentiment words to be added correctly");
@@ -586,15 +585,15 @@ public class MovieReviewSentimentAnalyzerTest {
         assertEquals(3, analyzer.getWordSentiment("new"), "Expected new sentiment words to be added correctly");
 
         assertEquals(2, analyzer.getWordFrequency("neutral"), "Expected old sentiment words to be updated correctly");
-        assertEquals(2.5, analyzer.getWordSentiment("neutral"), "Expected old sentiment words to be updated correctly");
+        assertEquals(2.5, analyzer.getWordSentiment("neutral"), 0.1,
+            "Expected old sentiment words to be updated correctly");
     }
 
     @Test
     void testAppendReviewNewWordsFrequency() {
         setAnalyzer();
 
-        assertTrue(analyzer.appendReview("New new ninja neutral!", 3),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New new ninja neutral!", 3), "Expected review to be appended successfully");
 
         assertEquals(1, analyzer.getWordFrequency("ninja"), "Expected new sentiment words to be added correctly");
         assertEquals(2, analyzer.getWordFrequency("new"), "Expected new sentiment words to be added correctly");
@@ -604,8 +603,7 @@ public class MovieReviewSentimentAnalyzerTest {
     void testAppendReviewOldWordsFrequency() {
         setAnalyzer();
 
-        assertTrue(analyzer.appendReview("New new ninja neutral!", 3),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New new ninja neutral!", 3), "Expected review to be appended successfully");
 
         assertEquals(2, analyzer.getWordFrequency("neutral"), "Expected old sentiment words to be updated correctly");
     }
@@ -614,18 +612,17 @@ public class MovieReviewSentimentAnalyzerTest {
     void testAppendReviewOldWordsSentiment() {
         setAnalyzer();
 
-        assertTrue(analyzer.appendReview("New new ninja neutral!", 3),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New new ninja neutral!", 3), "Expected review to be appended successfully");
 
-        assertEquals(2.5, analyzer.getWordSentiment("neutral"), "Expected old sentiment words to be updated correctly");
+        assertEquals(2.5, analyzer.getWordSentiment("neutral"), 0.1,
+            "Expected old sentiment words to be updated correctly");
     }
 
     @Test
     void testAppendReviewNewWordsSentiment() {
         setAnalyzer();
 
-        assertTrue(analyzer.appendReview("New new ninja neutral!", 3),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New new ninja neutral!", 3), "Expected review to be appended successfully");
 
         assertEquals(3, analyzer.getWordSentiment("ninja"), "Expected new sentiment words to be added correctly");
         assertEquals(3, analyzer.getWordSentiment("new"), "Expected new sentiment words to be added correctly");
@@ -639,7 +636,8 @@ public class MovieReviewSentimentAnalyzerTest {
             "Expected review to be appended successfully");
 
         assertEquals(4, analyzer.getWordFrequency("neutral"), "Expected old sentiment words to be added correctly");
-        assertEquals(2.5, analyzer.getWordSentiment("neutral"), "Expected old sentiment words to be added correctly");
+        assertEquals(2.5, analyzer.getWordSentiment("neutral"), 0.1,
+            "Expected old sentiment words to be added correctly");
     }
 
     @Test
@@ -650,11 +648,10 @@ public class MovieReviewSentimentAnalyzerTest {
 
         StringWriter stringWriter = new StringWriter();
 
-        analyzer = new MovieReviewSentimentAnalyzer(new StringReader(stopwords), new StringReader(reviews),
-            stringWriter);
+        analyzer =
+            new MovieReviewSentimentAnalyzer(new StringReader(stopwords), new StringReader(reviews), stringWriter);
 
-        assertTrue(analyzer.appendReview("New ninja approaches!", 4),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New ninja approaches!", 4), "Expected review to be appended successfully");
 
         assertEquals("4 New ninja approaches!" + System.lineSeparator(), stringWriter.toString(),
             "Expected new review to be appended correctly");
@@ -668,17 +665,14 @@ public class MovieReviewSentimentAnalyzerTest {
 
         StringWriter stringWriter = new StringWriter();
 
-        analyzer = new MovieReviewSentimentAnalyzer(new StringReader(stopwords), new StringReader(reviews),
-            stringWriter);
+        analyzer =
+            new MovieReviewSentimentAnalyzer(new StringReader(stopwords), new StringReader(reviews), stringWriter);
 
-        assertTrue(analyzer.appendReview("New ninja approaches!", 4),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("New ninja approaches!", 4), "Expected review to be appended successfully");
 
-        assertTrue(analyzer.appendReview("A TURTLE?!", 1),
-            "Expected review to be appended successfully");
+        assertTrue(analyzer.appendReview("A TURTLE?!", 1), "Expected review to be appended successfully");
 
         assertEquals("4 New ninja approaches!" + System.lineSeparator() + "1 A TURTLE?!" + System.lineSeparator(),
-            stringWriter.toString(),
-            "Expected new review to be appended correctly");
+            stringWriter.toString(), "Expected new review to be appended correctly");
     }
 }
