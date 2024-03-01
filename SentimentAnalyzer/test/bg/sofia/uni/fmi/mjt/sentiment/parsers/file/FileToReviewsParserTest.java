@@ -11,7 +11,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-
 public class FileToReviewsParserTest {
 
     @Test
@@ -214,9 +213,8 @@ public class FileToReviewsParserTest {
 
     @Test
     void testGetReviewsMultipleLineSeparators() {
-        String input =
-            System.lineSeparator() + System.lineSeparator() + "1 Here I am" + System.lineSeparator() +
-                System.lineSeparator();
+        String input = System.lineSeparator() + System.lineSeparator() + "1 Here I am" + System.lineSeparator() +
+            System.lineSeparator();
 
         BufferedReader reader = new BufferedReader(new StringReader(input));
 

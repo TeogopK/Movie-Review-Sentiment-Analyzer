@@ -18,7 +18,7 @@ public class ReviewTextToSentenceWordsParser {
 
         return Arrays.stream(valueLine.toLowerCase()
                 .split(REGEX_ONLY_LATIN_LETTERS_NUMBERS_AND_APOSTROPHE))
-            .map(String::trim)
+            .map(String::strip)
             .filter(s -> s.length() > 1)
             .filter(Predicate.not(analyzer::isStopWord))
             .toList();

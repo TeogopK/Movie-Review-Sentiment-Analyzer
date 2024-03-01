@@ -18,6 +18,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
@@ -58,7 +59,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
 
         setFrequencies(frequencies, wordsSet);
 
-        dictionary = wordsSet.stream().collect(Collectors.toMap(SentimentWord::getText, w -> w));
+        dictionary = wordsSet.stream().collect(Collectors.toMap(SentimentWord::getText, Function.identity()));
     }
 
     private Map<String, Long> getWordFrequencyMap() {
@@ -116,7 +117,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
             .sorted(Comparator.comparing(SentimentWord::getFrequency).reversed().thenComparing(SentimentWord::getText))
             .map(SentimentWord::getText)
             .limit(n)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -129,7 +130,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
             .sorted(Comparator.comparing(SentimentWord::getRating).reversed().thenComparing(SentimentWord::getText))
             .map(SentimentWord::getText)
             .limit(n)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -142,7 +143,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
             .sorted(Comparator.comparing(SentimentWord::getRating).thenComparing(SentimentWord::getText))
             .map(SentimentWord::getText)
             .limit(n)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
