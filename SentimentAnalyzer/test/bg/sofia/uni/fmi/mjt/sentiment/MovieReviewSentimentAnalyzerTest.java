@@ -205,11 +205,18 @@ public class MovieReviewSentimentAnalyzerTest {
     }
 
     void setAnalyzerBigger() {
-        String reviews = "3 Good film" + System.lineSeparator() + "1 a bad film!" + System.lineSeparator() +
-            "2 BAD GOOD neutral film" + System.lineSeparator() + "1 bad-worst, bad film ever" + System.lineSeparator() +
-            "0 worst terrible" + System.lineSeparator() + "4 fantastic fantastic wh1t wh1t" + System.lineSeparator() +
-            "not review" + System.lineSeparator() + "0 wh1t" + System.lineSeparator() + "4 top top top top top top" +
-            System.lineSeparator() + "0 this n o t a r e v i e w";
+        String reviews = """
+            3 Good film
+            1 a bad film!
+            2 BAD GOOD neutral film
+            1 bad-worst, bad film ever
+            0 worst terrible
+            4 fantastic fantastic wh1t wh1t
+            not review
+            0 wh1t
+            4 top top top top top top
+            0 this n o t a r e v i e w
+            """;
 
         String stopwords = "a" + System.lineSeparator() + "this" + System.lineSeparator();
 
