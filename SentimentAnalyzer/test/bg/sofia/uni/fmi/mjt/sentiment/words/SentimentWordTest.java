@@ -12,8 +12,7 @@ public class SentimentWordTest {
         word = new SentimentWord("word", 4, 3);
 
         word.addRating(0);
-        assertEquals(3, word.getRating(),
-            "Expected rating to be calculated correctly when both are integers");
+        assertEquals(3, word.getRating(), "Expected rating to be calculated correctly when both are integers");
     }
 
     @Test
@@ -21,8 +20,7 @@ public class SentimentWordTest {
         word = new SentimentWord("word", 4, 3);
 
         word.addRating(4);
-        assertEquals(4, word.getRating(),
-            "Expected rating to be calculated correctly when both are integers");
+        assertEquals(4, word.getRating(), "Expected rating to be calculated correctly when both are integers");
     }
 
     @Test
@@ -30,8 +28,7 @@ public class SentimentWordTest {
         word = new SentimentWord("word", 2, 1);
 
         word.addRating(2);
-        assertEquals(2, word.getRating(),
-            "Expected rating to be calculated correctly when both are integers");
+        assertEquals(2, word.getRating(), "Expected rating to be calculated correctly when both are integers");
     }
 
     @Test
@@ -39,8 +36,7 @@ public class SentimentWordTest {
         word = new SentimentWord("word", 0, 10);
 
         word.addRating(0);
-        assertEquals(0, word.getRating(),
-            "Expected rating to be calculated correctly when both are integers");
+        assertEquals(0, word.getRating(), "Expected rating to be calculated correctly when both are integers");
     }
 
     @Test
@@ -48,8 +44,7 @@ public class SentimentWordTest {
         word = new SentimentWord("word", 0, 2);
 
         word.addRating(3);
-        assertEquals(1, word.getRating(),
-            "Expected rating to be calculated correctly when both are integers");
+        assertEquals(1, word.getRating(), "Expected rating to be calculated correctly when both are integers");
     }
 
     @Test

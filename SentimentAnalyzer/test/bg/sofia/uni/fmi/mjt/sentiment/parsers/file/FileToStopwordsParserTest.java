@@ -110,23 +110,21 @@ public class FileToStopwordsParserTest {
 
         Set<String> set = Set.of("first", "second", "third");
 
-        assertEquals(set, FileToStopwordsParser.getStopwords(reader),
-            "Expected stopwords to be parsed correctly");
+        assertEquals(set, FileToStopwordsParser.getStopwords(reader), "Expected stopwords to be parsed correctly");
 
         assertEquals(3, set.size(), "Expected all stopwords to be parsed");
     }
 
     @Test
     void testGetStopwordsMultipleWordsWithSymbols() {
-        String input = "#first" + System.lineSeparator() + "@second" + System.lineSeparator() + "th^ird" +
-            System.lineSeparator();
+        String input =
+            "#first" + System.lineSeparator() + "@second" + System.lineSeparator() + "th^ird" + System.lineSeparator();
 
         BufferedReader reader = new BufferedReader(new StringReader(input));
 
         Set<String> set = Set.of("#first", "@second", "th^ird");
 
-        assertEquals(set, FileToStopwordsParser.getStopwords(reader),
-            "Expected stopwords to be parsed correctly");
+        assertEquals(set, FileToStopwordsParser.getStopwords(reader), "Expected stopwords to be parsed correctly");
 
         assertEquals(3, set.size(), "Expected all stopwords to be parsed");
     }
@@ -140,8 +138,7 @@ public class FileToStopwordsParserTest {
 
         Set<String> set = Set.of("doesn't", "can't", "you're");
 
-        assertEquals(set, FileToStopwordsParser.getStopwords(reader),
-            "Expected stopwords to be parsed correctly");
+        assertEquals(set, FileToStopwordsParser.getStopwords(reader), "Expected stopwords to be parsed correctly");
 
         assertEquals(3, set.size(), "Expected all stopwords to be parsed");
     }

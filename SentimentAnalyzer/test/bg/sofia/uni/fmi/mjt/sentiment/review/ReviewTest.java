@@ -8,26 +8,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ReviewTest {
     @Test
     void testIsReviewLineIsNull() {
-        assertFalse(Review.isReview(null),
-            "Null is not a review");
+        assertFalse(Review.isReview(null), "Null is not a review");
     }
 
     @Test
     void testIsReviewLineIsEmpty() {
-        assertFalse(Review.isReview(""),
-            "Empty line is not a review");
+        assertFalse(Review.isReview(""), "Empty line is not a review");
     }
 
     @Test
     void testIsReviewLineIsBlank() {
-        assertFalse(Review.isReview("  "),
-            "Blank line is not a review");
+        assertFalse(Review.isReview("  "), "Blank line is not a review");
     }
 
     @Test
     void testIsReviewLineIsReview() {
-        assertTrue(Review.isReview("5 I am a review"),
-            "Expected line to be a correct review");
+        assertTrue(Review.isReview("5 I am a review"), "Expected line to be a correct review");
     }
 
     @Test
@@ -110,8 +106,7 @@ public class ReviewTest {
 
     @Test
     void testIsReviewScoreIsZero() {
-        assertTrue(Review.isReview("0 I am a review"),
-            "Expected line to be a correct review when score is 0");
+        assertTrue(Review.isReview("0 I am a review"), "Expected line to be a correct review when score is 0");
     }
 
     @Test
