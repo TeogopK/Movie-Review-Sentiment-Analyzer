@@ -5,8 +5,10 @@ public enum SentimentType {
 
     private static final SentimentType[] VALUES = SentimentType.values();
 
+    public static final int UNKNOWN_VALUE_NUMBER = -1;
+
     public static SentimentType getSentimentType(int i) {
-        if (i == -1) {
+        if (i == UNKNOWN_VALUE_NUMBER) {
             return VALUES[0];
         }
         return VALUES[i + 1];

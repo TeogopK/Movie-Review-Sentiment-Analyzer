@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class ReviewTextToSentenceWordsParser {
 
-    private final static String REGEX_ONLY_LATIN_LETTERS_NUMBERS_AND_APOSTROPHE = "[^a-zA-Z0-9']+";
+    private static final String REGEX_ONLY_LATIN_LETTERS_NUMBERS_AND_APOSTROPHE = "[^a-zA-Z0-9']+";
 
     public static List<String> getSentenceWords(String valueLine, SentimentAnalyzer analyzer) {
         if (valueLine.isEmpty() || valueLine.isBlank()) {

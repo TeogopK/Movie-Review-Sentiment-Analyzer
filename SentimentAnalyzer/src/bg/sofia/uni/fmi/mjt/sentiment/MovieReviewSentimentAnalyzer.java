@@ -23,6 +23,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
+import static bg.sofia.uni.fmi.mjt.sentiment.SentimentType.UNKNOWN_VALUE_NUMBER;
+
 public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
 
     private List<Review> reviews;
@@ -81,7 +83,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
             .filter(dictionary::containsKey)
             .flatMapToDouble(w -> DoubleStream.of(dictionary.get(w).getRating()))
             .average()
-            .orElse(-1);
+            .orElse(UNKNOWN_VALUE_NUMBER);
     }
 
     @Override
@@ -94,7 +96,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
     @Override
     public double getWordSentiment(String word) {
         if (!dictionary.containsKey(word.toLowerCase())) {
-            return -1;
+            return UNKNOWN_VALUE_NUMBER;
         }
         return dictionary.get(word.toLowerCase()).getRating();
     }
