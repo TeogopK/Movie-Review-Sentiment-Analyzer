@@ -9,7 +9,7 @@ public class SentimentWord {
 
     private int countOfRatings;
 
-    private int frequency = 0;
+    private int frequency;
 
     public SentimentWord(String text, double rating, int countOfRatings) {
         this.text = text;

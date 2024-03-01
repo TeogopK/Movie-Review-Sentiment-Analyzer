@@ -30,7 +30,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
 
     private Set<String> stopwords;
 
-    private Writer reviewsOut;
+    private final Writer reviewsOut;
 
     final private static double SENTIMENT_LOWER_BOUND = 0;
     final private static double SENTIMENT_UPPER_BOUND = 4;

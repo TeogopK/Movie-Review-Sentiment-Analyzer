@@ -1,8 +1,5 @@
 package bg.sofia.uni.fmi.mjt.sentiment.review;
 
-import java.io.ObjectOutputStream;
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.regex.Pattern;
 
 // this may as well be a class
