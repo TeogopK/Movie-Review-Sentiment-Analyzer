@@ -157,7 +157,7 @@ public class MovieReviewSentimentAnalyzer implements SentimentAnalyzer {
             throw new IllegalArgumentException("Sentiment should not be outside the defined bounds");
         }
 
-        // This behaviour is not defined in the doc
+        // This behavior is not defined in the doc
         if (review.contains(System.lineSeparator())) {
             throw new IllegalArgumentException("Review can not contain line separator");
         }
