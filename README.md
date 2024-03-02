@@ -11,9 +11,9 @@ This project implements a sentiment analyzer for movie reviews using Machine Lea
   
 ## Training
 
-1. Reads the reviews from *movieReviews.txt*.
+1. Reads the reviews from the provided *reviewsIn Reader* (e.g. the *movieReviews.txt* file in Resources).
 2. Calculates the sentiment score for each word as the average rating it appears in.
-3. Ignores stopwords and non-word characters during analysis.
+3. Ignores stopwords from the provided *stopwordsIn Reader* (e.g. the *stopwords.txt* file in Resources) and non-word characters during analysis.
 
 ## Recognition
 
@@ -50,7 +50,18 @@ boolean appended = analyzer.appendReview("Great movie!", 4);
 ```
 
 ## Build
-To build and run the project, clone the repository and import it into your Java IDE. Ensure that the required dependencies are included.
+
+To build and run the project, ensure you have Maven installed on your system. Clone the repository to your local machine, navigate to the project folder and build the project using:
+
+```bash
+mvn package
+```
+
 
 ## Testing
-Automated tests are included to validate the functionality of the sentiment analyzer. To run the tests, execute the test suite provided.
+
+Automated tests are included to validate the functionality of the sentiment analyzer. To run the tests execute:
+
+```bash
+mvn test
+```
