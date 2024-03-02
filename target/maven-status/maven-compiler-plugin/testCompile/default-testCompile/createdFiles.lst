@@ -1,0 +1,9 @@
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\file\FileToReviewsParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\file\FileToStopwordsParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\MovieReviewSentimentAnalyzerTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\ReviewsToSentimentWordsParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\review\ReviewTextToSentenceWordsParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\words\SentimentWordTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\ReviewsToSentenceWordsCountParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\review\ReviewToMiniWordsParserTest.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\review\ReviewTest.class

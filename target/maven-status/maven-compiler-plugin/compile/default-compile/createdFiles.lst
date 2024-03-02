@@ -1,0 +1,13 @@
+bg\sofia\uni\fmi\mjt\sentiment\tsk\SentimentType.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\words\SentimentWord.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\review\ReviewTextToSentenceWordsParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\SentimentType$1.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\file\FileToStopwordsParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\words\MiniWord.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\file\FileToReviewsParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\ReviewsToSentimentWordsParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\ReviewsToSentenceWordsCountParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\SentimentAnalyzer.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\parsers\review\ReviewToMiniWordsParser.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\MovieReviewSentimentAnalyzer.class
+bg\sofia\uni\fmi\mjt\sentiment\tsk\review\Review.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: bg.sofia.uni.fmi.mjt.sentiment.tsk.parsers.review.ReviewTextToSentenceWordsParserTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.196 s -- in bg.sofia.uni.fmi.mjt.sentiment.tsk.parsers.review.ReviewTextToSentenceWordsParserTest
